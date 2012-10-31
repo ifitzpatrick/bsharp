@@ -1,0 +1,14 @@
+{
+  "title": "BSharp",
+  "src": "src",
+  "build": "build",
+  "port": 5050,
+  "concatJS": "js/app",
+  "proxies": {
+    "/api": {
+      "hostname": "localhost",
+      "port"    : 9000,
+      "path"    : "/"
+    }
+  }
+}
