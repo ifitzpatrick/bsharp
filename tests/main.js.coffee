@@ -71,3 +71,7 @@ describe "buildSequence should build an array of notes", ->
     expect(seq[0].rest).toBe 0
     expect(seq[1].rest).toBe 0
 
+  it "should allow defaults", ->
+    seq = BSharp.buildSequence [["C"]], {length: 5}
+    expect(seq[0].length).toBe 5
+

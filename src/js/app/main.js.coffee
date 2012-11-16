@@ -140,16 +140,24 @@ window.BSharp =
   # note name, length, rest, config
   buildSequence: (tuples, defaults = {}) ->
     currentTime = 0
+    localDefaults =
+      value:  @getNoteFrequency "C"
+      length: 1
+      rest:   0
+
     (for tuple in tuples
-      value  = @getNoteFrequency tuple[0] or "C"
-      length = tuple[1] or 1
-      rest   = tuple[2] or 0
-      config = tuple[3] or {}
-      start  = currentTime
+      baseNote        = {}
+      baseNote.value  = @getNoteFrequency tuple[0] if tuple[0]?
+      baseNote.length = tuple[1] if tuple[1]
+      baseNote.rest   = tuple[2] if tuple[2]
+      config          = tuple[3] or {}
+      baseNote.start  = currentTime
 
-      currentTime += length
+      note = _.extend {}, localDefaults, defaults, baseNote, config
 
-      _.extend {}, defaults, {value, length, start, rest}, config
+      currentTime += note.length
+
+      note
     )
 
   configureSequence: (notes = [], config = {}) ->
