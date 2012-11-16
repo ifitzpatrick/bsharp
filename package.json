@@ -1,0 +1,26 @@
+{
+  "name": "BSharp",
+  "version": "0.0.1",
+  "description": "Turn the web audio api into beautiful music",
+  "main": "lib/bsharp.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "sealdeal test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ifitzpatrick/bsharp"
+  },
+  "keywords": [
+    "web",
+    "audio",
+    "api"
+  ],
+  "author": "Ian Fitzpatrick",
+  "license": "BSD",
+  "dependencies": {
+    "sealdeal": "0.2.6"
+  }
+}
