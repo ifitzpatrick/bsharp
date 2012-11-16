@@ -160,9 +160,13 @@ window.BSharp =
       note
     )
 
-  configureSequence: (notes = [], config = {}) ->
+  applyTempo: (length, tempo) ->
+    length / (tempo/60)
+
+  applySequenceTempo: (notes, tempo) ->
     for note in notes
-      $.extend note, config
+      note.length = @applyTempo note.length, tempo
+      note.start  = @applyTempo note.start,  tempo
 
     return notes
 

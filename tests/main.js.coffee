@@ -75,3 +75,24 @@ describe "buildSequence should build an array of notes", ->
     seq = BSharp.buildSequence [["C"]], {length: 5}
     expect(seq[0].length).toBe 5
 
+describe "applyTempo should adjust length given tempo in bpm", ->
+  expect(BSharp.applyTempo(1, 100)).toBe  60/100
+  expect(BSharp.applyTempo(2, 100)).toBe 120/100
+
+describe "applySequenceTempo should apply tempo to an array of notes", ->
+  seq = BSharp.applySequenceTempo [
+    {length:  0, start: 0  }
+    {length:  1, start: 1  }
+    {length: .5, start: 2  }
+    {length: .5, start: 2.5}
+  ], 120
+
+  expect(seq[1].length).toBe 0.5
+  expect(seq[1].start).toBe  0.5
+
+  expect(seq[2].length).toBe 0.25
+  expect(seq[2].start).toBe  1
+
+  expect(seq[3].length).toBe 0.25
+  expect(seq[3].start).toBe  1.25
+
