@@ -20,9 +20,12 @@ task "app:server", "run test app server", ->
 task "app:build", "build test app", ->
   createSealdealTask "build"
 
-task "test:server", "run testacular server", ->
+task "test:server", "run testacular server (requires testacular)", ->
   createSealdealTask "test-server"
 
-task "test:run", "run jasmine unit tests with testacular", ->
+testRunDescription =
+  "run jasmine unit tests with testacular (requires testacular)"
+
+task "test:run", testRunDescription, ->
   createSealdealTask "test"
 
