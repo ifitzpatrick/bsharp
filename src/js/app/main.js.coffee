@@ -152,7 +152,7 @@ window.BSharp =
       $.extend defaults, {value, length, start, rest}, config
     )
 
-  configureSequence: (notes [], config = {}) ->
+  configureSequence: (notes = [], config = {}) ->
     for note in notes
       $.extend note, config
 
