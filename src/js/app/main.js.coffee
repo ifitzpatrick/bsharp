@@ -115,7 +115,7 @@ window.BSharp =
   getFullScale: (note, steps, length, start = 0) ->
     @createSynthSong @getFullScaleNotes(note, steps, length, start)
 
-  getChordNotes: (note, steps, length = 1, start = 0) ->
+  getChordNotes: (steps, length = 1, start = 0) ->
     (for step in steps
       value: @getFrequency step
       start: start
@@ -126,7 +126,7 @@ window.BSharp =
     scaleSteps = @getScaleSteps note, steps
     chordSteps = (scaleSteps[i] for i in [0, 2, 4, 7])
 
-    notes = @getChordNotes note, chordSteps, length, start
+    notes = @getChordNotes chordSteps, length, start
     return notes
 
   getMinorChordNotes: (note, length, start) ->
