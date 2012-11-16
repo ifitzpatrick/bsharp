@@ -16,7 +16,6 @@ BSharp is a library that abstracts the webkit audio api, and adds a more
 
  * BSharp.buildSequence(tuples, defaults) - The first argument should be an
    array of arrays, each of which can have 3 arguments:
-
      0. Note name - The name of a note in scientific pitch notation i.e. "C5"
 
      1. Length - The length of the note; by default a length of 1 will produce
