@@ -145,11 +145,11 @@ window.BSharp =
       length = tuple[1] or 1
       rest   = tuple[2] or 0
       config = tuple[3] or {}
-      start  = length + currentTime
+      start  = currentTime
 
       currentTime += length
 
-      $.extend defaults, {value, length, start, rest}, config
+      _.extend {}, defaults, {value, length, start, rest}, config
     )
 
   configureSequence: (notes = [], config = {}) ->

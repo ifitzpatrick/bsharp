@@ -41,14 +41,33 @@ describe "getNoteFrequency: get frequency from scientific note pitch", ->
 describe "getScaleSteps", ->
   it "should return correct scale steps", ->
     major = BSharp.steps.major
-    expect(BSharp.getScaleSteps "A4", major).toEqual [0].concat (for step, i in major
-      BSharp.util.sumUntil major, i + 1)
+    expect(BSharp.getScaleSteps "A4", major).toEqual [0].concat(
+      for step, i in major
+        BSharp.util.sumUntil major, i + 1
+    )
 
-describe "buildSequence", ->
-  it "should build an array of notes", ->
+describe "buildSequence should build an array of notes", ->
+  seq = null
+
+  beforeEach ->
     seq = BSharp.buildSequence [
       ["C",  1]
       ["E",  1]
-      ["G",  1]
-      ["C5", 1]
     ]
+
+  it "should have notes with correct frequencies", ->
+    expect(seq[0].value).toBe BSharp.getNoteFrequency "C"
+    expect(seq[1].value).toBe BSharp.getNoteFrequency "E"
+
+  it "should have notes with correct length", ->
+    expect(seq[0].length).toBe 1
+    expect(seq[1].length).toBe 1
+
+  it "should have notes with correct start", ->
+    expect(seq[0].start).toBe 0
+    expect(seq[1].start).toBe 1
+
+  it "should have notes with correct rest", ->
+    expect(seq[0].rest).toBe 0
+    expect(seq[1].rest).toBe 0
+
