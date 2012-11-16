@@ -3,12 +3,6 @@
   "version": "0.0.1",
   "description": "Turn the web audio api into beautiful music",
   "main": "lib/bsharp.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "sealdeal test"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/ifitzpatrick/bsharp"
