@@ -245,3 +245,26 @@ BSharp.chromaticJam = BSharp.createSynthSong do ->
 
   return notes
 
+#BSharp.communitySong = BSharp.createSynthSong BSharp.applySequenceTempo(
+#  BSharp.buildSequence [
+#    [0.25, [-12, 0]  ]
+#    [0.25, [-12, 0]  ]
+#    [0.25, [-12, 0]  ]
+#    [0.50, 7, .5]
+#    [0.25, 0  ]
+#    [0.25, 0  ]
+#    [0.25, 0  ]
+#    [0.50, 9, .5]
+#    [0.25, 0  ]
+#    [0.25, 0  ]
+#    [0.25, 0  ]
+#    [0.50, 10  ]
+#    [0.50, 10  ]
+#    [0.50, 10  ]
+#    [0.50, 9]
+#    [0.50, 10  ]
+#    [0.25, 9]
+#    [1.00, [0, 7]]
+#  ]
+#  , 60)
+
